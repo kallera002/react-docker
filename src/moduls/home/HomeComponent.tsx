@@ -4,7 +4,6 @@ import DevelopmentStackComponent from "./components/DevelopmentStackComponent"
 import EasyDevelopmentComponent from "./components/EasyDevelopmentComponent"
 import SkillComponent from "./components/SkillComponent"
 import { ConnectWithMeComponent } from "./components/ConnectWithMeComponent"
-import { ProjectComponent } from "./components/ProjectComponent"
 
 const HomeComponent = () => {
   return (

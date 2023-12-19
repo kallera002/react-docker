@@ -1,13 +1,5 @@
-import { MdOutlineEmojiEvents } from "react-icons/md";
-import { MdEventAvailable } from "react-icons/md";
-import { MdEvent } from "react-icons/md";
 import { VscSymbolEvent } from "react-icons/vsc";
-import { MdTimeline } from "react-icons/md";
-import { RiMapPinTimeLine } from "react-icons/ri";
-import { MdEventNote } from "react-icons/md";
-import { SiHiveBlockchain } from "react-icons/si";
 import { SiChainlink } from "react-icons/si";
-import { IoIosRocket } from "react-icons/io";
 
 const timelineDetails = [
   {

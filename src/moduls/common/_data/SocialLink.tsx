@@ -1,10 +1,8 @@
 
 import { FaLinkedinIn } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { MdEmail } from "react-icons/md";
-import { FaYoutube } from "react-icons/fa";
 
 export const SocialMediaLink = [
   {
