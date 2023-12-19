@@ -14,7 +14,7 @@ const HomeComponent = () => {
       <SkillComponent />
       <EasyDevelopmentComponent />
       <ConnectWithMeComponent />
-      <ProjectComponent />
+      {/* <ProjectComponent /> */}
     </Fragment>
   )
 }
