@@ -7,7 +7,7 @@ const ConnectWithMeComponent = () => {
   return (
     <BaseLayoutComponent id="connect-with-me">
       <Flex
-        mb={{ '2xl': 16, lg: 14, md: 14, sm: 20 }}
+        mb={{ base: 14, lg: 14, md: 14, sm: 20, xs: 20 }}
         p="10"
         w="full"
         borderRadius="10px"
@@ -15,19 +15,21 @@ const ConnectWithMeComponent = () => {
         alignItems={'center'}
         justify={'space-evenly'}
         display={{
-          '2xl': 'flex',
-          md: 'flex',
-          lg: 'flex',
-          sm: 'block',
+          base: "flex",
+          md: "flex",
+          lg: "flex",
+          sm: "block",
+          xs: "block",
         }}
         bgGradient="linear(to-r, gray.300, yellow.400, pink.200)">
         <VStack alignItems={'flex-start'}>
           <Text
             fontSize={{
-              '2xl': '6xl',
-              lg: '4xl',
-              md: '4xl',
-              sm: '4xl',
+              base: "4xl",
+              lg: "4xl",
+              md: "4xl",
+              sm: "2xl",
+              xs: "2xl",
             }}
             fontWeight={'bold'}>
             Mari Membangun Sesuatu Bersama Saya
@@ -43,7 +45,7 @@ const ConnectWithMeComponent = () => {
             shadow={'dark-lg'}
             _hover={{ shadow: 'none' }}
             variant="solid"
-            marginTop={{ '2xl': 4, lg: 4, md: 4, sm: 4 }}>
+            marginTop={{ base: 0, lg: 0, md: 0, sm: 4, xs: 4 }}>
             Connect With Me
           </Button>
         </Link>

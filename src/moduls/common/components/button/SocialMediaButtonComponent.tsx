@@ -27,7 +27,6 @@ const SocialMediaButtonComponent = () => {
                 variant="solid"
                 colorScheme="gray"
                 boxShadow="inner"
-                /* eslint-disable  @typescript-eslint/no-explicit-any */
                 color={color}
                 icon={item.icon}
               />

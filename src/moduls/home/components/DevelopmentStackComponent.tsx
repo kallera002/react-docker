@@ -12,6 +12,7 @@ const DevelopmentStackComponent = () => {
           md: '5xl',
           lg: '5xl',
           sm: '3xl',
+          xs: "3xl",
         }}
         fontWeight="bold"
         textAlign="center">
@@ -19,20 +20,21 @@ const DevelopmentStackComponent = () => {
       </Heading>
       <Text
         textAlign="center"
-        fontSize={{ base: 'md', md: 'md', lg: 'md', sm: 'sm' }}
+        fontSize={{ base: "md", md: "md", lg: "md", sm: "sm", xs: "sm" }}
         my="5"
         mx={{ lg: 60, md: 60, sm: 0, xs: 0 }}>
         mengimplementasikan aplikasi berfitur lengkap, Saya dapat menyediakan proses desain produk
         lengkap mulai dari ide hingga aplikasi berkualitas tinggi, dipoles dengan desain fantastis
         dan dijalankan dengan perangkat lunak canggih.
       </Text>
-      <Box as="center" my={{ base: 20, lg: 20, md: 20, sm: 14 }}>
+      <Box as="center" my={{ base: 20, lg: 20, md: 20, sm: 14, xs: 14 }}>
         <Grid
           display={{
-            base: 'grid',
-            md: 'grid',
-            lg: 'grid',
-            sm: 'block',
+            base: "grid",
+            md: "grid",
+            lg: "grid",
+            sm: "block",
+            xs: "block",
           }}
           templateColumns="repeat(2,1fr)"
           maxW="3xl"

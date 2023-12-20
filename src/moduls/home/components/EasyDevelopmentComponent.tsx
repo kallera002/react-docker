@@ -12,6 +12,7 @@ const EasyDevelopmentComponent = () => {
           md: '5xl',
           lg: '5xl',
           sm: '3xl',
+          xs: "3xl",
         }}
         fontWeight="bold"
         textAlign="center">
@@ -24,13 +25,14 @@ const EasyDevelopmentComponent = () => {
         mx={{ lg: 60, md: 60, sm: 0, xs: 0 }}>
         Saya memberi Anda fasilitas berikut untuk proses pengembangan produk Anda, dan banyak lagi.
       </Text>
-      <Box as="center" my={{ base: 20, lg: 20, md: 20, sm: 14 }}>
+      <Box as="center" my={{ base: 20, lg: 20, md: 20, sm: 10, xs: 10 }}>
         <Grid
           display={{
             base: 'grid',
             md: 'grid',
             lg: 'grid',
             sm: 'block',
+            xs: "block",
           }}
           templateColumns="repeat(2,1fr)"
           maxW="3xl"
