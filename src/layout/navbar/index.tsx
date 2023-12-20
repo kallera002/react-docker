@@ -10,7 +10,7 @@ const NavbarComponent = () => {
       <DesktopNavbarComponent onClick={onToggle} isOpen={isOpen} />
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNavbarComponent />
+        <MobileNavbarComponent onClick={onToggle} />
       </Collapse>
     </Box>
   );

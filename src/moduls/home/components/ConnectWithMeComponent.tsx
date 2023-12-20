@@ -15,21 +15,21 @@ const ConnectWithMeComponent = () => {
         alignItems={'center'}
         justify={'space-evenly'}
         display={{
-          base: "flex",
-          md: "flex",
-          lg: "flex",
-          sm: "block",
-          xs: "block",
+          base: 'flex',
+          md: 'flex',
+          lg: 'flex',
+          sm: 'block',
+          xs: 'block',
         }}
         bgGradient="linear(to-r, gray.300, yellow.400, pink.200)">
         <VStack alignItems={'flex-start'}>
           <Text
             fontSize={{
-              base: "4xl",
-              lg: "4xl",
-              md: "4xl",
-              sm: "2xl",
-              xs: "2xl",
+              base: '4xl',
+              lg: '4xl',
+              md: '4xl',
+              sm: '2xl',
+              xs: '2xl',
             }}
             fontWeight={'bold'}>
             Mari Membangun Sesuatu Bersama Saya

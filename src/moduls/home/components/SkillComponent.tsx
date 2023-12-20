@@ -25,8 +25,7 @@ const SkillComponent = () => {
             pb={{ base: 10, lg: 10, md: 10, sm: 10, xs: 10 }}
             my={{ base: 0, lg: 0, md: 0, sm: 4, xs: 10 }}
             alignItems="center"
-            justify="center"
-          >
+            justify="center">
             {skillDetails.map((item) => (
               <Box key={item.key}>
                 <Image

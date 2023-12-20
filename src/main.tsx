@@ -6,8 +6,8 @@ import { ChakraComponent } from './moduls/common/components/chakra/ChakraCompone
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ChakraComponent >
-        <App />
+    <ChakraComponent>
+      <App />
     </ChakraComponent>
   </React.StrictMode>
 );

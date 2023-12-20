@@ -12,7 +12,7 @@ const EasyDevelopmentComponent = () => {
           md: '5xl',
           lg: '5xl',
           sm: '3xl',
-          xs: "3xl",
+          xs: '3xl',
         }}
         fontWeight="bold"
         textAlign="center">
@@ -32,7 +32,7 @@ const EasyDevelopmentComponent = () => {
             md: 'grid',
             lg: 'grid',
             sm: 'block',
-            xs: "block",
+            xs: 'block',
           }}
           templateColumns="repeat(2,1fr)"
           maxW="3xl"
