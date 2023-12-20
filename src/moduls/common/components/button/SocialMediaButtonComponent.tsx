@@ -1,9 +1,11 @@
-import React from "react"
-import { SocialMediaLink } from "../../_data/SocialLink"
-import { AnimatePresence, motion } from "framer-motion"
-import { ButtonGroup, IconButton, useColorModeValue } from "@chakra-ui/react"
+import React from 'react';
+import { SocialMediaLink } from '../../_data/SocialLink';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ButtonGroup, IconButton, useColorModeValue } from '@chakra-ui/react';
 
 const SocialMediaButtonComponent = () => {
+  const color = useColorModeValue('black', 'white');
+
   return (
     <React.Fragment>
       <AnimatePresence initial={false}>
@@ -11,12 +13,11 @@ const SocialMediaButtonComponent = () => {
           {SocialMediaLink?.map((item, index) => (
             <motion.div
               key={index}
-              style={{ display: "inline-block" }}
+              style={{ display: 'inline-block' }}
               initial={{ y: 5, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               whileHover={{ y: -5, opacity: 0.8 }}
-              transition={{ duration: 0.3 }}
-            >
+              transition={{ duration: 0.3 }}>
               <IconButton
                 as="a"
                 href={item.link}
@@ -26,7 +27,8 @@ const SocialMediaButtonComponent = () => {
                 variant="solid"
                 colorScheme="gray"
                 boxShadow="inner"
-                color={useColorModeValue("black", "white")}
+                /* eslint-disable  @typescript-eslint/no-explicit-any */
+                color={color}
                 icon={item.icon}
               />
             </motion.div>
@@ -34,7 +36,7 @@ const SocialMediaButtonComponent = () => {
         </ButtonGroup>
       </AnimatePresence>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export { SocialMediaButtonComponent }
+export { SocialMediaButtonComponent };

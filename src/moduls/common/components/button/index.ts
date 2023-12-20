@@ -1,1 +1,1 @@
-export * from './SocialMediaButtonComponent'
+export * from './SocialMediaButtonComponent';

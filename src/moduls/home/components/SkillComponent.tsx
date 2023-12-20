@@ -1,8 +1,8 @@
-import React from "react";
-import { Box, Flex, Image } from "@chakra-ui/react";
-import { BaseLayoutComponent } from "../../common/components";
-import BaseTextComponent from "../../common/components/text/BaseTextComponent";
-import { skillDetails } from "../data/skill_detail";
+import React from 'react';
+import { Box, Flex, Image } from '@chakra-ui/react';
+import { BaseLayoutComponent } from '../../common/components';
+import BaseTextComponent from '../../common/components/text/BaseTextComponent';
+import { skillDetails } from '../data/skill_detail';
 
 const SkillComponent = () => {
   return (
@@ -16,23 +16,16 @@ const SkillComponent = () => {
           leftSpacing={20}
           topSpacing={-4}
         />
-        <Box
-          boxShadow="2xl"
-          borderRadius="3xl"
-          my="10"
-          bgColor="white"
-          id="skills-wrapper"
-        >
+        <Box boxShadow="2xl" borderRadius="3xl" my="10" bgColor="white" id="skills-wrapper">
           <Flex
-            gap={{ base: 16, lg: 16, md: 16, sm: 10}}
+            gap={{ base: 16, lg: 16, md: 16, sm: 10 }}
             wrap="wrap"
             p={{ base: 10, lg: 10, md: 10, sm: 10 }}
             pt={{ base: 10, lg: 10, md: 10, sm: 10 }}
             pb={{ base: 10, lg: 10, md: 10, sm: 10 }}
             my={{ base: 0, lg: 0, md: 0, sm: 4 }}
             alignItems="center"
-            justify="center"
-          >
+            justify="center">
             {skillDetails.map((item) => (
               <Box key={item.key}>
                 <Image

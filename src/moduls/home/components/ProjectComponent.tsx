@@ -1,9 +1,23 @@
-import React from "react";
-import { BaseLayoutComponent } from "../../common/components";
-import BaseTextComponent from "../../common/components/text/BaseTextComponent";
-import { timelineDetails } from "../data/project_data.tsx";
-import { Box, Flex, Grid, Heading, IconButton, Text, useColorModeValue, Link, Tag, Center, Divider } from "@chakra-ui/react";
-import { Link as NavLink } from 'react-router-dom'
+import React from 'react';
+import { BaseLayoutComponent } from '../../common/components';
+import BaseTextComponent from '../../common/components/text/BaseTextComponent';
+import { timelineDetails } from '../data/project_data.tsx';
+import {
+  Box,
+  Flex,
+  Grid,
+  Heading,
+  IconButton,
+  Text,
+  useColorModeValue,
+  Link,
+  Tag,
+  Center,
+  Divider,
+} from '@chakra-ui/react';
+import { Link as NavLink } from 'react-router-dom';
+import { ITag } from '../../common/_types/index.ts';
+import { IProject } from '../types/project.ts';
 
 const ProjectComponent = () => {
   return (
@@ -19,60 +33,55 @@ const ProjectComponent = () => {
         <Box
           my="20"
           display={{
-            base: "inherit",
-            lg: "inherit",
-            md: "inherit",
-            sm: "none",
-            xs: "none",
+            base: 'inherit',
+            lg: 'inherit',
+            md: 'inherit',
+            sm: 'none',
+            xs: 'none',
           }}
-          id="timeline-wrapper"
-        >
-          {timelineDetails.map((item, index) => {
+          id="timeline-wrapper">
+          {timelineDetails.map((item: IProject, index: number) => {
             return index % 2 ? (
               <Grid
                 key={index}
                 display="grid"
                 gridTemplateColumns={{
-                  base: "1fr 2px 1fr",
-                  md: "1fr 2px 1fr",
-                  lg: "1fr 2px 1fr",
-                  sm: "none",
+                  base: '1fr 2px 1fr',
+                  md: '1fr 2px 1fr',
+                  lg: '1fr 2px 1fr',
+                  sm: 'none',
                 }}
                 flexDirection="column"
                 gridColumnGap="80px"
-                gridRowGap="20px"
-              >
+                gridRowGap="20px">
                 <Box alignSelf="center">
                   <Text
                     textAlign={{
-                      base: "right",
-                      md: "right",
-                      lg: "right",
-                      sm: "left",
-                    }}
-                  >
+                      base: 'right',
+                      md: 'right',
+                      lg: 'right',
+                      sm: 'left',
+                    }}>
                     {item.timeline_date}
                   </Text>
                   <Link
                     textAlign={{
-                      base: "right",
-                      md: "right",
-                      lg: "right",
-                      sm: "left",
+                      base: 'right',
+                      md: 'right',
+                      lg: 'right',
+                      sm: 'left',
                     }}
                     href={item.timeline_event_link}
-                    isExternal={true}
-                  >
+                    isExternal={true}>
                     <Text>{item.timeline_hostedby}</Text>
                   </Link>
                   <Text
                     textAlign={{
-                      base: "right",
-                      md: "right",
-                      lg: "right",
-                      sm: "left",
-                    }}
-                  >
+                      base: 'right',
+                      md: 'right',
+                      lg: 'right',
+                      sm: 'left',
+                    }}>
                     {item.timeline_place}
                   </Text>
                 </Box>
@@ -81,8 +90,8 @@ const ProjectComponent = () => {
                     variant="dashed"
                     orientation="vertical"
                     style={{
-                      borderWidth: "1px",
-                      borderColor: "teal",
+                      borderWidth: '1px',
+                      borderColor: 'teal',
                     }}
                   />
                   <Text
@@ -94,33 +103,25 @@ const ProjectComponent = () => {
                     position="absolute"
                     top="47%"
                     right="-8.5px"
-                    bgGradient="linear(to-tr, teal.500, green.400)"
-                  ></Text>
+                    bgGradient="linear(to-tr, teal.500, green.400)"></Text>
                 </Box>
                 <Box
                   borderRadius="base"
                   p={{ base: 5, lg: 5, md: 5, sm: 4 }}
-                  pl={{ base: 14, lg: 14, md: 14, sm: 14}}
+                  pl={{ base: 14, lg: 14, md: 14, sm: 14 }}
                   position="relative"
                   // eslint-disable-next-line react-hooks/rules-of-hooks
-                  bgColor={useColorModeValue("white", "gray.700")}
+                  bgColor={useColorModeValue('white', 'gray.700')}
                   boxShadow="outline"
-                  transition={"ease-in-out"}
+                  transition={'ease-in-out'}
                   transitionDuration="0.5s"
-                  _hover={{ boxShadow: "2xl" }}
-                >
+                  _hover={{ boxShadow: '2xl' }}>
                   <Heading fontSize="lg">{item.timeline_title}</Heading>
                   <Text fontSize="md" textAlign="left" mt="2">
                     {item.timeline_description}
                   </Text>
-                  <Flex
-                    wrap="wrap"
-                    direction="row"
-                    gap={2}
-                    mt="4"
-                    justify="left"
-                  >
-                    {item.timeline_tags.map((tag, i) => {
+                  <Flex wrap="wrap" direction="row" gap={2} mt="4" justify="left">
+                    {item.timeline_tags.map((tag: ITag, i: number) => {
                       return (
                         <Tag key={i} size="lg">
                           {tag.tag}
@@ -134,26 +135,25 @@ const ProjectComponent = () => {
                     w={{ base: 14, lg: 14, md: 14, sm: 10 }}
                     h={{ base: 14, lg: 14, md: 14, sm: 10 }}
                     bgColor={item.timeline_card_color}
-                    top={{ base: "12%", lg: "12%", md: "12%", sm: 6 }}
+                    top={{ base: '12%', lg: '12%', md: '12%', sm: 6 }}
                     left={{ base: -7, lg: -7, md: -7, sm: 1 }}
                     borderRadius={{
-                      base: "20px 0 20px 0",
-                      lg: "20px 0 20px 0",
-                      md: "20px 0 20px 0",
-                      sm: "15px 0 15px 0",
+                      base: '20px 0 20px 0',
+                      lg: '20px 0 20px 0',
+                      md: '20px 0 20px 0',
+                      sm: '15px 0 15px 0',
                     }}
                     boxShadow="2xl"
-                    transition={"ease-in-out"}
+                    transition={'ease-in-out'}
                     transitionDuration="0.5s"
-                    _hover={{ boxShadow: "outline" }}
-                  >
+                    _hover={{ boxShadow: 'outline' }}>
                     <IconButton
                       as="a"
                       fontSize={{
-                        base: "3xl",
-                        lg: "3xl",
-                        md: "3xl",
-                        sm: "2xl",
+                        base: '3xl',
+                        lg: '3xl',
+                        md: '3xl',
+                        sm: '2xl',
                       }}
                       aria-label={`${item.timeline_title}`}
                       variant="unstyled"
@@ -172,17 +172,16 @@ const ProjectComponent = () => {
                 key={index}
                 display="grid"
                 gridTemplateColumns={{
-                  base: "1fr 2px 1fr",
-                  md: "1fr 2px 1fr",
-                  lg: "1fr 2px 1fr",
-                  sm: "none",
+                  base: '1fr 2px 1fr',
+                  md: '1fr 2px 1fr',
+                  lg: '1fr 2px 1fr',
+                  sm: 'none',
                 }}
                 gridColumn="2 / -1"
                 flexDirection="column"
                 gridColumnGap="80px"
                 gridRowGap="20px"
-                gridAutoFlow={"dense"}
-              >
+                gridAutoFlow={'dense'}>
                 <Box
                   borderRadius="base"
                   p={{ base: 5, lg: 5, md: 5, sm: 4 }}
@@ -190,39 +189,36 @@ const ProjectComponent = () => {
                     base: 14,
                     lg: 14,
                     md: 14,
-                    sm: "inherit",
+                    sm: 'inherit',
                   }}
-                  pl={{ base: "none", lg: "none", md: "none", sm: 14 }}
+                  pl={{ base: 'none', lg: 'none', md: 'none', sm: 14 }}
                   position="relative"
                   my="20"
                   // eslint-disable-next-line react-hooks/rules-of-hooks
-                  bgColor={useColorModeValue("white", "gray.700")}
+                  bgColor={useColorModeValue('white', 'gray.700')}
                   boxShadow="outline"
-                  transition={"ease-in-out"}
+                  transition={'ease-in-out'}
                   transitionDuration="0.5s"
-                  _hover={{ boxShadow: "2xl" }}
-                >
+                  _hover={{ boxShadow: '2xl' }}>
                   <Heading
                     fontSize="lg"
                     textAlign={{
-                      base: "right",
-                      md: "right",
-                      lg: "right",
-                      sm: "left",
-                    }}
-                  >
+                      base: 'right',
+                      md: 'right',
+                      lg: 'right',
+                      sm: 'left',
+                    }}>
                     {item.timeline_title}
                   </Heading>
                   <Text
                     fontSize="md"
                     textAlign={{
-                      base: "right",
-                      md: "right",
-                      lg: "right",
-                      sm: "left",
+                      base: 'right',
+                      md: 'right',
+                      lg: 'right',
+                      sm: 'left',
                     }}
-                    mt="2"
-                  >
+                    mt="2">
                     {item.timeline_description}
                   </Text>
                   <Flex
@@ -231,13 +227,12 @@ const ProjectComponent = () => {
                     gap={2}
                     mt="4"
                     justify={{
-                      base: "right",
-                      md: "right",
-                      lg: "right",
-                      sm: "left",
-                    }}
-                  >
-                    {item.timeline_tags.map((tag:any, i:number) => {
+                      base: 'right',
+                      md: 'right',
+                      lg: 'right',
+                      sm: 'left',
+                    }}>
+                    {item.timeline_tags.map((tag: ITag, i: number) => {
                       return (
                         <Tag key={i} size="lg">
                           {tag.tag}
@@ -248,35 +243,34 @@ const ProjectComponent = () => {
                   <Box
                     as={Center}
                     display={{
-                      base: "inherit",
-                      lg: "inherit",
-                      md: "inherit",
-                      sm: "none",
+                      base: 'inherit',
+                      lg: 'inherit',
+                      md: 'inherit',
+                      sm: 'none',
                     }}
                     position="absolute"
                     w={{ base: 14, lg: 14, md: 14, sm: 10 }}
                     h={{ base: 14, lg: 14, md: 14, sm: 10 }}
                     bgColor={item.timeline_card_color}
-                    top={{ base: "12%", lg: "12%", md: "12%", sm: 6 }}
-                    right={{ base: -7, lg: -7, md: -7, sm: "none" }}
+                    top={{ base: '12%', lg: '12%', md: '12%', sm: 6 }}
+                    right={{ base: -7, lg: -7, md: -7, sm: 'none' }}
                     borderRadius={{
-                      base: "20px 0 20px 0",
-                      lg: "20px 0 20px 0",
-                      md: "20px 0 20px 0",
-                      sm: "15px 0 15px 0",
+                      base: '20px 0 20px 0',
+                      lg: '20px 0 20px 0',
+                      md: '20px 0 20px 0',
+                      sm: '15px 0 15px 0',
                     }}
                     boxShadow="2xl"
-                    transition={"ease-in-out"}
+                    transition={'ease-in-out'}
                     transitionDuration="0.5s"
-                    _hover={{ boxShadow: "outline" }}
-                  >
+                    _hover={{ boxShadow: 'outline' }}>
                     <IconButton
                       as="a"
                       fontSize={{
-                        base: "3xl",
-                        lg: "3xl",
-                        md: "3xl",
-                        sm: "2xl",
+                        base: '3xl',
+                        lg: '3xl',
+                        md: '3xl',
+                        sm: '2xl',
                       }}
                       aria-label={`${item.timeline_title}`}
                       variant="unstyled"
@@ -295,8 +289,8 @@ const ProjectComponent = () => {
                     variant="dashed"
                     orientation="vertical"
                     style={{
-                      borderWidth: "1px",
-                      borderColor: "teal",
+                      borderWidth: '1px',
+                      borderColor: 'teal',
                     }}
                   />
                   <Text
@@ -325,13 +319,12 @@ const ProjectComponent = () => {
         <Box
           my="20"
           display={{
-            base: "none",
-            lg: "none",
-            md: "none",
-            sm: "inherit",
-          }}
-        >
-          {timelineDetails.map((item:any, index:number) => {
+            base: 'none',
+            lg: 'none',
+            md: 'none',
+            sm: 'inherit',
+          }}>
+          {timelineDetails.map((item: IProject, index: number) => {
             return (
               <Flex key={index} gap="10">
                 <Box position="relative">
@@ -339,7 +332,7 @@ const ProjectComponent = () => {
                     variant="dashed"
                     orientation="vertical"
                     style={{
-                      borderColor: "teal",
+                      borderColor: 'teal',
                     }}
                   />
                   <Text
@@ -356,46 +349,42 @@ const ProjectComponent = () => {
                 </Box>
                 <Flex
                   display={{
-                    base: "none",
-                    lg: "none",
-                    md: "none",
-                    sm: "flex",
+                    base: 'none',
+                    lg: 'none',
+                    md: 'none',
+                    sm: 'flex',
                   }}
                   flexDirection="column"
                   gap="4"
-                  my="10"
-                >
+                  my="10">
                   <Box alignSelf="left">
                     <Text
                       textAlign={{
-                        base: "right",
-                        md: "right",
-                        lg: "right",
-                        sm: "left",
-                      }}
-                    >
+                        base: 'right',
+                        md: 'right',
+                        lg: 'right',
+                        sm: 'left',
+                      }}>
                       {item.timeline_date}
                     </Text>
                     <Link
                       textAlign={{
-                        base: "right",
-                        md: "right",
-                        lg: "right",
-                        sm: "left",
+                        base: 'right',
+                        md: 'right',
+                        lg: 'right',
+                        sm: 'left',
                       }}
                       href={item.timeline_event_link}
-                      isExternal={true}
-                    >
+                      isExternal={true}>
                       <Text>{item.timeline_hostedby}</Text>
                     </Link>
                     <Text
                       textAlign={{
-                        base: "right",
-                        md: "right",
-                        lg: "right",
-                        sm: "left",
-                      }}
-                    >
+                        base: 'right',
+                        md: 'right',
+                        lg: 'right',
+                        sm: 'left',
+                      }}>
                       {item.timeline_place}
                     </Text>
                   </Box>
@@ -406,24 +395,17 @@ const ProjectComponent = () => {
                     pl={{ base: 14, lg: 14, md: 14, sm: 14 }}
                     position="relative"
                     // eslint-disable-next-line react-hooks/rules-of-hooks
-                    bgColor={useColorModeValue("white", "gray.700")}
+                    bgColor={useColorModeValue('white', 'gray.700')}
                     boxShadow="outline"
-                    transition={"ease-in-out"}
+                    transition={'ease-in-out'}
                     transitionDuration="0.5s"
-                    _hover={{ boxShadow: "2xl" }}
-                  >
+                    _hover={{ boxShadow: '2xl' }}>
                     <Heading fontSize="lg">{item.timeline_title}</Heading>
                     <Text fontSize="md" textAlign="left">
                       {item.timeline_description}
                     </Text>
-                    <Flex
-                      wrap="wrap"
-                      direction="row"
-                      gap={2}
-                      mt="4"
-                      justify="left"
-                    >
-                      {item.timeline_tags.map((tag:any, i:number) => {
+                    <Flex wrap="wrap" direction="row" gap={2} mt="4" justify="left">
+                      {item.timeline_tags.map((tag: ITag, i: number) => {
                         return (
                           <Tag key={i} size="md">
                             {tag.tag}
@@ -437,27 +419,26 @@ const ProjectComponent = () => {
                       w={{ base: 14, lg: 14, md: 14, sm: 10 }}
                       h={{ base: 14, lg: 14, md: 14, sm: 10 }}
                       bgColor={item.timeline_card_color}
-                      top={{ base: "25%", lg: "25%", md: "25%", sm: 6 }}
+                      top={{ base: '25%', lg: '25%', md: '25%', sm: 6 }}
                       left={{ base: -7, lg: -7, md: -7, sm: 1 }}
                       borderRadius={{
-                        base: "20px 0 20px 0",
-                        lg: "20px 0 20px 0",
-                        md: "20px 0 20px 0",
-                        sm: "15px 0 15px 0",
+                        base: '20px 0 20px 0',
+                        lg: '20px 0 20px 0',
+                        md: '20px 0 20px 0',
+                        sm: '15px 0 15px 0',
                       }}
                       boxShadow="2xl"
-                      transition={"ease-in-out"}
+                      transition={'ease-in-out'}
                       transitionDuration="0.5s"
-                      _hover={{ boxShadow: "outline" }}
-                    >
+                      _hover={{ boxShadow: 'outline' }}>
                       <IconButton
                         as="a"
                         fontSize={{
-                          base: "3xl",
-                          lg: "3xl",
-                          md: "3xl",
-                          sm: "2xl",
-                          xs: "2xl",
+                          base: '3xl',
+                          lg: '3xl',
+                          md: '3xl',
+                          sm: '2xl',
+                          xs: '2xl',
                         }}
                         aria-label={`${item.timeline_title}`}
                         variant="unstyled"
@@ -477,7 +458,7 @@ const ProjectComponent = () => {
         </Box>
       </BaseLayoutComponent>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export { ProjectComponent }
+export { ProjectComponent };

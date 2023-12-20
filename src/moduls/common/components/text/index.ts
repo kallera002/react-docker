@@ -1,1 +1,1 @@
-export * from './TextGradientComponent'
+export * from './TextGradientComponent';

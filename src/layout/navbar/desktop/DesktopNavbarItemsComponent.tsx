@@ -1,26 +1,24 @@
-import { 
-  Box, 
-  Link, 
-  Popover, 
-  PopoverContent, 
-  PopoverTrigger, 
-  Stack, 
-  useColorModeValue 
-} from "@chakra-ui/react";
-import { NAV_ITEMS } from "../_data";
-import { NavItem } from "../_types";
-import { Link as LinkRoute } from "react-router-dom";
-
+import {
+  Box,
+  Link,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Stack,
+  useColorModeValue,
+} from '@chakra-ui/react';
+import { NAV_ITEMS } from '../_data';
+import { NavItem } from '../_types';
+import { Link as LinkRoute } from 'react-router-dom';
 
 const DesktopNavbarItemsComponent = () => {
-  
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
   return (
     <Stack direction={'row'} spacing={4}>
-      {NAV_ITEMS?.map((navItem:NavItem) => (
+      {NAV_ITEMS?.map((navItem: NavItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
@@ -63,7 +61,7 @@ const DesktopNavbarItemsComponent = () => {
         </Box>
       ))}
     </Stack>
-  )
-}
+  );
+};
 
-export default DesktopNavbarItemsComponent
+export default DesktopNavbarItemsComponent;

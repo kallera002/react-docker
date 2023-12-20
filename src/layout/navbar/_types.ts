@@ -1,6 +1,6 @@
 export interface INavbar {
-    onClick?:() => void
-    isOpen?:boolean
+  onClick?: () => void;
+  isOpen?: boolean;
 }
 
 /**

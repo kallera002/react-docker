@@ -1,14 +1,13 @@
-
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FiInstagram } from "react-icons/fi";
-import { MdEmail } from "react-icons/md";
+import { FaLinkedinIn } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
+import { FiInstagram } from 'react-icons/fi';
+import { MdEmail } from 'react-icons/md';
 
 export const SocialMediaLink = [
   {
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/fikri-ramadhan-17454767/",
-    icon: <FaLinkedinIn/>,
+    name: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/fikri-ramadhan-17454767/',
+    icon: <FaLinkedinIn />,
   },
   // {
   //   name: "Twitter",
@@ -16,13 +15,13 @@ export const SocialMediaLink = [
   //   icon: <FaTwitter />,
   // },
   {
-    name: "GitHub",
-    link: "https://github.com/kallera002",
+    name: 'GitHub',
+    link: 'https://github.com/kallera002',
     icon: <FaGithub />,
   },
   {
-    name: "Instagram",
-    link: "https://www.instagram.com/ramadhan.dev",
+    name: 'Instagram',
+    link: 'https://www.instagram.com/ramadhan.dev',
     icon: <FiInstagram />,
   },
   // {
@@ -31,8 +30,8 @@ export const SocialMediaLink = [
   //   icon: <FaYoutube />,
   // },
   {
-    name: "Mail",
-    link: "mailto:fikriramadhan002@gmail.com",
+    name: 'Mail',
+    link: 'mailto:fikriramadhan002@gmail.com',
     icon: <MdEmail />,
   },
 ];

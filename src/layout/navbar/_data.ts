@@ -1,4 +1,4 @@
-import { NavItem } from "./_types";
+import { NavItem } from './_types';
 
 export const NAV_ITEMS: Array<NavItem> = [
   // {
@@ -71,5 +71,5 @@ export const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Contact',
     href: 'contact',
-  }
+  },
 ];

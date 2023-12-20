@@ -1,6 +1,4 @@
 const MobileNavbarComponent = () => {
-    return (
-        <>MobileNavbarComponent</>
-    )
-}
-export default MobileNavbarComponent
+  return <>MobileNavbarComponent</>;
+};
+export default MobileNavbarComponent;

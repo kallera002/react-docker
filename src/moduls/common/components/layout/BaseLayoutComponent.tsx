@@ -1,19 +1,18 @@
-import { Box } from "@chakra-ui/react"
-import { IBaseLayout } from "./_types"
+import { Box } from '@chakra-ui/react';
+import { IBaseLayout } from './_types';
 
 const BaseLayoutComponent: React.FC<IBaseLayout> = ({ children, ...props }) => {
   return (
     <Box
-      px={{md: "6", lg: "20", sm: "10", xl: "10" }}
+      px={{ md: '6', lg: '20', sm: '10', xl: '10' }}
       pb="0"
-      pt={{sm: "16", md: "20" }}
+      pt={{ sm: '16', md: '20' }}
       {...props}
       mx="auto"
-      maxW="1530"
-    >
+      maxW="1530">
       {children}
     </Box>
-  )
-}
+  );
+};
 
-export { BaseLayoutComponent }
+export { BaseLayoutComponent };

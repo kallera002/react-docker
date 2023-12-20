@@ -1,15 +1,14 @@
-import { IChildren } from "../../_types";
+import { IChildren } from '../../_types';
 
 export interface ITextGradient extends IChildren {
-  background?:string
+  background?: string;
 }
 
-
 export interface IBaseText {
-  id?: string
-  firstTitle: string
-  secondTitle: string
-  textIcon: string
-  leftSpacing?: number,
-  topSpacing?: number,
+  id?: string;
+  firstTitle: string;
+  secondTitle: string;
+  textIcon: string;
+  leftSpacing?: number;
+  topSpacing?: number;
 }

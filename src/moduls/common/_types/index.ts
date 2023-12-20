@@ -1,5 +1,5 @@
 export interface IChildren {
-  children:React.ReactNode
+  children: React.ReactNode;
 }
 
 /**
@@ -7,14 +7,19 @@ export interface IChildren {
  */
 
 export interface ISectionWrapper extends IChildren {
-  padding?:string
+  padding?: string;
 }
-
 
 export interface IBaseLayout extends IChildren {
-  padding?: string
-  id:string
-  mt?:number
+  padding?: string;
+  id: string;
+  mt?: number;
 }
 
+export interface ISVG {
+  svgIcon: React.ReactElement;
+}
 
+export interface ITag {
+  tag: string;
+}
