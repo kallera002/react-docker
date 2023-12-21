@@ -1,14 +1,14 @@
 import { ITag } from '../../common/_types';
 
 export interface IProject {
-  timeline_title: string;
-  timeline_description: string;
-  timeline_icon: React.ReactElement;
-  timeline_place: string;
-  timeline_date: string;
-  timeline_day: string;
-  timeline_hostedby: string;
-  timeline_event_link: string;
-  timeline_tags: ITag[];
-  timeline_card_color: string;
+  project_title: string;
+  project_description: string;
+  project_icon: React.ReactElement;
+  project_place: string;
+  project_date: string;
+  project_day: string;
+  project_hostedby: string;
+  project_event_link: string;
+  project_tags: ITag[];
+  project_card_color: string;
 }

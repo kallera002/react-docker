@@ -113,4 +113,4 @@ const HeaderComponent = () => {
   );
 };
 
-export default HeaderComponent;
+export { HeaderComponent };

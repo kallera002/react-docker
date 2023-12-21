@@ -68,4 +68,4 @@ const DevelopmentStackComponent = () => {
     </BaseLayoutComponent>
   );
 };
-export default DevelopmentStackComponent;
+export { DevelopmentStackComponent };

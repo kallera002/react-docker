@@ -10,7 +10,7 @@ const BaseTextComponent: React.FC<IBaseText> = ({
   ...props
 }) => {
   return (
-    <Flex my={{ base: 0, md: 0, lg: 0, sm: 10 }} {...props}>
+    <Flex my={{ base: 0, md: 0, lg: 0, sm: 10, xs: 10 }} {...props}>
       <VStack align="start" position="relative">
         <Text
           fontSize={{

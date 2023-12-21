@@ -66,4 +66,4 @@ const EasyDevelopmentComponent = () => {
     </BaseLayoutComponent>
   );
 };
-export default EasyDevelopmentComponent;
+export { EasyDevelopmentComponent };

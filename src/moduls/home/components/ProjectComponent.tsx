@@ -1,7 +1,6 @@
 import React from 'react';
 import { BaseLayoutComponent } from '../../common/components';
 import BaseTextComponent from '../../common/components/text/BaseTextComponent';
-import { timelineDetails } from '../data/project_data.tsx';
 import {
   Box,
   Flex,
@@ -15,6 +14,8 @@ import {
   Center,
   Divider,
 } from '@chakra-ui/react';
+import { IProject } from '../types/project.ts';
+import { projectDetails } from '../data/project_data.tsx';
 
 const ProjectComponent = () => {
   return (
@@ -22,8 +23,8 @@ const ProjectComponent = () => {
       <BaseLayoutComponent id="timeline">
         <BaseTextComponent
           id="timeline-header-wrapper"
-          firstTitle="Featured"
-          secondTitle="Timeline"
+          firstTitle="Project"
+          secondTitle=""
           textIcon="https://ik.imagekit.io/ayushsoni1010/Website/timeline?ik-sdk-version=javascript-1.4.3&updatedAt=1669666586717"
           topSpacing={2}
         />
@@ -37,7 +38,7 @@ const ProjectComponent = () => {
             xs: 'none',
           }}
           id="timeline-wrapper">
-          {timelineDetails.map((item, index) => {
+          {projectDetails?.map((item: IProject, index: number) => {
             return index % 2 ? (
               <Grid
                 key={index}
@@ -61,7 +62,7 @@ const ProjectComponent = () => {
                       sm: 'left',
                       xs: 'left',
                     }}>
-                    {item.timeline_date}
+                    {item.project_date}
                   </Text>
                   <Link
                     textAlign={{
@@ -71,9 +72,9 @@ const ProjectComponent = () => {
                       sm: 'left',
                       xs: 'left',
                     }}
-                    href={item.timeline_event_link}
+                    href={item.project_event_link}
                     isExternal={true}>
-                    <Text>{item.timeline_hostedby}</Text>
+                    <Text>{item.project_hostedby}</Text>
                   </Link>
                   <Text
                     textAlign={{
@@ -83,7 +84,7 @@ const ProjectComponent = () => {
                       sm: 'left',
                       xs: 'left',
                     }}>
-                    {item.timeline_place}
+                    {item.project_place}
                   </Text>
                 </Box>
                 <Box position="relative">
@@ -117,12 +118,12 @@ const ProjectComponent = () => {
                   transition={'ease-in-out'}
                   transitionDuration="0.5s"
                   _hover={{ boxShadow: '2xl' }}>
-                  <Heading fontSize="lg">{item.timeline_title}</Heading>
+                  <Heading fontSize="lg">{item.project_title}</Heading>
                   <Text fontSize="md" textAlign="left" mt="2">
-                    {item.timeline_description}
+                    {item.project_description}
                   </Text>
                   <Flex wrap="wrap" direction="row" gap={2} mt="4" justify="left">
-                    {item.timeline_tags.map((tag, i) => {
+                    {item.project_tags.map((tag, i) => {
                       return (
                         <Tag key={i} size="lg">
                           {tag.tag}
@@ -134,7 +135,7 @@ const ProjectComponent = () => {
                     position="absolute"
                     w={{ base: 14, lg: 14, md: 14, sm: 10, xs: 10 }}
                     h={{ base: 14, lg: 14, md: 14, sm: 10, xs: 10 }}
-                    bgColor={item.timeline_card_color}
+                    bgColor={item.project_card_color}
                     top={{ base: '12%', lg: '12%', md: '12%', sm: 6, xs: 6 }}
                     left={{ base: -7, lg: -7, md: -7, sm: 1, xs: 1 }}
                     borderRadius={{
@@ -158,14 +159,14 @@ const ProjectComponent = () => {
                         sm: '2xl',
                         xs: '2xl',
                       }}
-                      aria-label={`${item.timeline_title}`}
+                      aria-label={`${item.project_title}`}
                       variant="unstyled"
                       color="white"
                       colorScheme="gray"
                       boxShadow="inner"
                       position="relative"
                       top={{ base: 3, lg: 3, md: 3, sm: 2, xs: 2 }}
-                      icon={item.timeline_icon}
+                      icon={item.project_icon}
                     />
                   </Box>
                 </Box>
@@ -214,7 +215,7 @@ const ProjectComponent = () => {
                       sm: 'left',
                       xs: 'left',
                     }}>
-                    {item.timeline_title}
+                    {item.project_title}
                   </Heading>
                   <Text
                     fontSize="md"
@@ -226,7 +227,7 @@ const ProjectComponent = () => {
                       xs: 'left',
                     }}
                     mt="2">
-                    {item.timeline_description}
+                    {item.project_description}
                   </Text>
                   <Flex
                     wrap="wrap"
@@ -240,7 +241,7 @@ const ProjectComponent = () => {
                       sm: 'left',
                       xs: 'left',
                     }}>
-                    {item.timeline_tags.map((tag, i) => {
+                    {item.project_tags.map((tag, i) => {
                       return (
                         <Tag key={i} size="lg">
                           {tag.tag}
@@ -259,7 +260,7 @@ const ProjectComponent = () => {
                     position="absolute"
                     w={{ base: 14, lg: 14, md: 14, sm: 10, xs: 10 }}
                     h={{ base: 14, lg: 14, md: 14, sm: 10, xs: 10 }}
-                    bgColor={item.timeline_card_color}
+                    bgColor={item.project_card_color}
                     top={{ base: '12%', lg: '12%', md: '12%', sm: 6, xs: 6 }}
                     right={{ base: -7, lg: -7, md: -7, sm: 'none', xs: 'none' }}
                     borderRadius={{
@@ -283,14 +284,14 @@ const ProjectComponent = () => {
                         sm: '2xl',
                         xs: '2xl',
                       }}
-                      aria-label={`${item.timeline_title}`}
+                      aria-label={`${item.project_title}`}
                       variant="unstyled"
                       color="white"
                       colorScheme="gray"
                       boxShadow="inner"
                       position="relative"
                       top={{ base: 3, lg: 3, md: 3, sm: 2, xs: 2 }}
-                      icon={item.timeline_icon}
+                      icon={item.project_icon}
                     />
                   </Box>
                 </Box>
@@ -317,11 +318,11 @@ const ProjectComponent = () => {
                   />
                 </Box>
                 <Box alignSelf="center">
-                  <Text>{item.timeline_date}</Text>
-                  <Link href={item.timeline_event_link} isExternal={true}>
-                    <Text>{item.timeline_hostedby}</Text>
+                  <Text>{item.project_date}</Text>
+                  <Link href={item.project_event_link} isExternal={true}>
+                    <Text>{item.project_hostedby}</Text>
                   </Link>
-                  <Text>{item.timeline_place}</Text>
+                  <Text>{item.project_place}</Text>
                 </Box>
               </Grid>
             );
@@ -336,7 +337,7 @@ const ProjectComponent = () => {
             sm: 'inherit',
             xs: 'inherit',
           }}>
-          {timelineDetails.map((item, index) => {
+          {projectDetails?.map((item: IProject, index: number) => {
             return (
               <Flex key={index} gap="10">
                 <Box position="relative">
@@ -379,7 +380,7 @@ const ProjectComponent = () => {
                         sm: 'left',
                         xs: 'left',
                       }}>
-                      {item.timeline_date}
+                      {item.project_date}
                     </Text>
                     <Link
                       textAlign={{
@@ -389,9 +390,9 @@ const ProjectComponent = () => {
                         sm: 'left',
                         xs: 'left',
                       }}
-                      href={item.timeline_event_link}
+                      href={item.project_event_link}
                       isExternal={true}>
-                      <Text>{item.timeline_hostedby}</Text>
+                      <Text>{item.project_hostedby}</Text>
                     </Link>
                     <Text
                       textAlign={{
@@ -401,7 +402,7 @@ const ProjectComponent = () => {
                         sm: 'left',
                         xs: 'left',
                       }}>
-                      {item.timeline_place}
+                      {item.project_place}
                     </Text>
                   </Box>
 
@@ -416,12 +417,12 @@ const ProjectComponent = () => {
                     transition={'ease-in-out'}
                     transitionDuration="0.5s"
                     _hover={{ boxShadow: '2xl' }}>
-                    <Heading fontSize="lg">{item.timeline_title}</Heading>
+                    <Heading fontSize="lg">{item.project_title}</Heading>
                     <Text fontSize="md" textAlign="left">
-                      {item.timeline_description}
+                      {item.project_description}
                     </Text>
                     <Flex wrap="wrap" direction="row" gap={2} mt="4" justify="left">
-                      {item.timeline_tags.map((tag, i) => {
+                      {item.project_tags.map((tag, i) => {
                         return (
                           <Tag key={i} size="md">
                             {tag.tag}
@@ -433,7 +434,7 @@ const ProjectComponent = () => {
                       position="absolute"
                       w={{ base: 14, lg: 14, md: 14, sm: 10, xs: 10 }}
                       h={{ base: 14, lg: 14, md: 14, sm: 10, xs: 10 }}
-                      bgColor={item.timeline_card_color}
+                      bgColor={item.project_card_color}
                       top={{ base: '25%', lg: '25%', md: '25%', sm: 6, xs: 6 }}
                       left={{ base: -7, lg: -7, md: -7, sm: 1, xs: 1 }}
                       borderRadius={{
@@ -457,14 +458,14 @@ const ProjectComponent = () => {
                           sm: '2xl',
                           xs: '2xl',
                         }}
-                        aria-label={`${item.timeline_title}`}
+                        aria-label={`${item.project_title}`}
                         variant="unstyled"
                         color="white"
                         colorScheme="gray"
                         boxShadow="inner"
                         position="relative"
                         top={{ base: 3, lg: 3, md: 3, sm: 2, xs: 2 }}
-                        icon={item.timeline_icon}
+                        icon={item.project_icon}
                       />
                     </Box>
                   </Box>
