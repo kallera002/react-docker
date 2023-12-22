@@ -1,13 +1,5 @@
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
-import {
-  Button,
-  Text,
-  Flex,
-  IconButton,
-  Stack,
-  useBreakpointValue,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Button, Flex, IconButton, Stack, useColorModeValue } from '@chakra-ui/react';
 import { Fragment } from 'react';
 import { INavbar } from '../_types';
 import DesktopNavbarItemsComponent from './DesktopNavbarItemsComponent';
@@ -39,12 +31,12 @@ const DesktopNavbarComponent: React.FC<INavbar> = ({ onClick, isOpen }) => {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
+          {/* <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
             Logo
-          </Text>
+          </Text> */}
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNavbarItemsComponent />

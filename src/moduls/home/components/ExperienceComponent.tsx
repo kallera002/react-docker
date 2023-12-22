@@ -6,7 +6,7 @@ import BaseTextComponent from '../../common/components/text/BaseTextComponent';
 
 const ExperienceComponent = () => {
   return (
-    <BaseLayoutComponent mt="10" mb="10" id="experience">
+    <BaseLayoutComponent mb="10" id="experience">
       <BaseTextComponent
         id="experience"
         firstTitle="Experience"
@@ -39,7 +39,7 @@ const ExperienceComponent = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 items-center pb-4">
+                <div className="grid grid-cols-1 items-center">
                   <div className="text-left ">
                     <p className="text-slate-900 group-hover:text-dark text-sm">Masa Kerja</p>
                   </div>
@@ -49,13 +49,17 @@ const ExperienceComponent = () => {
                   </div>
                 </div>
 
-                <div className="border-y-2"></div>
-                <div className="py-2">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt culpa odio
-                  nostrum, vel minima facilis impedit asperiores exercitationem quos repudiandae
-                  illum quam voluptatibus. Est delectus praesentium magnam nemo voluptatibus
-                  similique!
+                <div className="flex items-center space-x-3">
+                  <div>
+                    <p className="text-slate-900 group-hover:text-dark text-sm">Website</p>
+                    <a href={obj.web_url} target="_blank" className="text-red-900 text-sm">
+                      {obj.web_url}
+                    </a>
+                  </div>
                 </div>
+
+                <div className="border-y-2"></div>
+                <div className="py-2">{obj.short_description}</div>
               </CardComponent>
             </>
           );

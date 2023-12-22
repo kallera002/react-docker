@@ -1,3 +1,5 @@
+import { ITag } from '../../common/_types';
+
 export interface IExperience {
   company_name: string;
   location: string;
@@ -8,4 +10,6 @@ export interface IExperience {
   short_description: string;
   description: string;
   position: string;
+  web_url: string;
+  app_stack: ITag[];
 }

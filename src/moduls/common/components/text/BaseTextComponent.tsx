@@ -18,6 +18,7 @@ const BaseTextComponent: React.FC<IBaseText> = ({
             lg: '7xl',
             md: '7xl',
             sm: '6xl',
+            xs: '4xl',
           }}
           fontWeight="900"
           zIndex="5">
