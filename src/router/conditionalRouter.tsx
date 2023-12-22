@@ -14,43 +14,14 @@ const conditionalRouter = createBrowserRouter([
     ),
     children: [
       {
-        path: 'about',
-        element: (
-          <SectionWrapper>
-            {' '}
-            <>lore,</>{' '}
-          </SectionWrapper>
-        ),
-      },
-      {
         path: 'home',
         element: <HomeComponent />,
       },
       {
-        path: 'experience',
-        element: (
-          <SectionWrapper>
-            {' '}
-            <>Experience,</>{' '}
-          </SectionWrapper>
-        ),
-      },
-
-      {
         path: 'blog',
         element: (
           <SectionWrapper>
-            {' '}
-            <>Blog,</>{' '}
-          </SectionWrapper>
-        ),
-      },
-      {
-        path: 'contact',
-        element: (
-          <SectionWrapper>
-            {' '}
-            <>Contact,</>{' '}
+            <>BLog,</>
           </SectionWrapper>
         ),
       },

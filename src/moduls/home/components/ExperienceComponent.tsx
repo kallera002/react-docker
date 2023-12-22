@@ -1,14 +1,5 @@
-import {
-  SimpleGrid,
-  Card,
-  CardHeader,
-  Heading,
-  CardBody,
-  CardFooter,
-  Button,
-  Text,
-} from '@chakra-ui/react';
-import { BaseLayoutComponent } from '../../common/components';
+import { SimpleGrid } from '@chakra-ui/react';
+import { BaseLayoutComponent, CardComponent } from '../../common/components';
 import { IExperience } from '../types/experience';
 import { experienceData } from '../data/experience_data';
 import BaseTextComponent from '../../common/components/text/BaseTextComponent';
@@ -29,19 +20,44 @@ const ExperienceComponent = () => {
         templateColumns="repeat(auto-fill, minmax(400px, 1fr))"
         spacingX="40px"
         spacingY="40px">
-        {experienceData?.map((obj: IExperience, index: number) => {
+        {experienceData?.map((obj: IExperience) => {
           return (
-            <Card boxShadow="2xl" rounded="md" key={index}>
-              <CardHeader>
-                <Heading size="md"> {obj.company_name} </Heading>
-              </CardHeader>
-              <CardBody>
-                <Text>{obj.short_description}</Text>
-              </CardBody>
-              <CardFooter>
-                <Button>View here</Button>
-              </CardFooter>
-            </Card>
+            <>
+              <CardComponent>
+                <div className="flex items-center space-x-3">
+                  <h3 className="text-slate-900 group-hover:text-dark text-md font-semibold">
+                    {obj.company_name}
+                  </h3>
+                  <p className="text-slate-500 group-hover:text-dark text-sm">
+                    ( {obj.business_fields} )
+                  </p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div>
+                    <p className="text-slate-900 group-hover:text-dark text-sm">Posisi</p>
+                    <p className="text-slate-500 group-hover:text-dark text-sm">{obj.position}</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 items-center pb-4">
+                  <div className="text-left ">
+                    <p className="text-slate-900 group-hover:text-dark text-sm">Masa Kerja</p>
+                  </div>
+                  <div className=" grid grid-cols-2 ">
+                    <p className="text-slate-500 group-hover:text-dark text-sm">{obj.start_date}</p>
+                    <p className="text-slate-500 group-hover:text-dark text-sm">{obj.end_date}</p>
+                  </div>
+                </div>
+
+                <div className="border-y-2"></div>
+                <div className="py-2">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt culpa odio
+                  nostrum, vel minima facilis impedit asperiores exercitationem quos repudiandae
+                  illum quam voluptatibus. Est delectus praesentium magnam nemo voluptatibus
+                  similique!
+                </div>
+              </CardComponent>
+            </>
           );
         })}
       </SimpleGrid>

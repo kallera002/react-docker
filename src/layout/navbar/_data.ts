@@ -57,19 +57,7 @@ export const NAV_ITEMS: Array<NavItem> = [
     href: 'home',
   },
   {
-    label: 'About',
-    href: 'about',
-  },
-  {
     label: 'Blog',
     href: 'blog',
-  },
-  {
-    label: 'Experience',
-    href: 'experience',
-  },
-  {
-    label: 'Contact',
-    href: 'contact',
   },
 ];
