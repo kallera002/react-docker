@@ -1,5 +1,7 @@
 import {
   Box,
+  Flex,
+  Grid,
   Link,
   Popover,
   PopoverContent,
@@ -10,6 +12,7 @@ import {
 import { NAV_ITEMS } from '../_data';
 import { NavItem } from '../_types';
 import { Link as LinkRoute } from 'react-router-dom';
+import { DesktopSubNavbarComponent } from './DesktopSubNavbarComponent';
 
 const DesktopNavbarItemsComponent = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
@@ -44,15 +47,18 @@ const DesktopNavbarItemsComponent = () => {
                 bg={popoverContentBgColor}
                 p={4}
                 rounded={'xl'}
-                minW={'sm'}>
+                minW={'md'}
+                as={Grid}>
+                <div>lorem</div>
+                <div>lorem</div>
                 {/* <Stack>
                   {navItem?.children?.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
+                    <DesktopSubNavbarComponent key={child.label} {...child} />
                   ))}
-                </Stack> */}
-                {/* <Stack>
+                </Stack>  */}
+                 {/* <Stack>
                   {navItem?.children?.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
+                    <DesktopSubNavbarComponent key={child.label} {...child} />
                   ))}
                 </Stack> */}
               </PopoverContent>

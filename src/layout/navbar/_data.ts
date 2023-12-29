@@ -37,6 +37,19 @@ export const NAV_ITEMS: Array<NavItem> = [
 
   //   ],
   // },
+
+  {
+    label: 'Home',
+    href: 'home',
+  },
+  {
+    label: 'Blog',
+    href: 'blog',
+  },
+  // {
+  //   label: 'Portofolio',
+  //   href: 'portofolio',
+  // },
   // {
   //   label: 'Find Work',
   //   children: [
@@ -52,12 +65,8 @@ export const NAV_ITEMS: Array<NavItem> = [
   //     },
   //   ],
   // },
-  {
-    label: 'Home',
-    href: 'home',
-  },
-  {
-    label: 'Blog',
-    href: 'blog',
-  },
+  // {
+  //   label: 'Tools',
+  //   href: 'tools',
+  // },
 ];
